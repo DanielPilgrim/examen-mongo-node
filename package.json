@@ -1,0 +1,27 @@
+{
+  "name": "examen_mongo-node",
+  "version": "1.0.0",
+  "description": "evaluacion node/mongo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielPilgrim/examen-mongo-node.git"
+  },
+  "author": "Daniel trujillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielPilgrim/examen-mongo-node/issues"
+  },
+  "homepage": "https://github.com/DanielPilgrim/examen-mongo-node#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0",
+    "mongoose-sequence": "^6.0.1"
+  },
+  "type": "module"
+}
