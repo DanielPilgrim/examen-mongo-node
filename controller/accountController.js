@@ -1,22 +1,24 @@
 import Account from '../models/account.js';
 import bcrypt from 'bcryptjs';
 
-export const createAccount = async (req, res) => {
-    const { document, balance, key } = req.body;
+export async function createAccount(req, res) {
     try {
+        const { document, balance, key, observation } = req.body;
+
         const account = new Account({
-            document: document || 'null',  
-            dateOpening: new Date(),
-            balance: balance || 0,
-            key: await bcrypt.hash(key, 4)  
+            document: document || null, 
+            balance: balance || 0, 
+            key: await bcrypt.hash(key, 6),
+            observation: observation || '',
+            estado: 'activo'  
         });
 
         await account.save();
-        res.status(201).send(account);
+        res.status(201).json({ msg: 'Account created successfully', account });
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).json({ msg: error.message });
     }
-};
+}
 
 export const getAccounts = async (req, res) => {
     try {
